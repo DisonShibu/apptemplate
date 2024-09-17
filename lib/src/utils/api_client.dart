@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:developer';
+import 'package:app_template/src/models/get_tcs_location_model.dart';
 import 'package:app_template/src/models/header_model.dart';
 import 'package:app_template/src/models/login_request_model.dart';
 import 'package:app_template/src/utils/urls.dart';
@@ -34,13 +36,28 @@ class ApiClient {
     xRequestTime: "",
   );
 
-  ///  user login
-  Future<Response> loginRequest(LoginRequest loginRequest) {
-    print(loginRequest.toString());
+  // ///  user login
+  // Future<Response> loginRequest(LoginRequest loginRequest) {
+  //   print(loginRequest.toString());
 
-    return ObjectFactory()
-        .appDio
-        .loginPost(url: Urls.baseUrl, data: loginRequest, header: loginModel);
+  //   return ObjectFactory()
+  //       .appDio
+  //       .loginPost(url: Urls.baseUrl, data: loginRequest, header: loginModel);
+  // }
+
+   Future<GetTcsLocationModel> getPvrDetails(
+    String getPvrId,
+  ) async {
+    try {
+
+      final payload = await ObjectFactory().appDio.get(url: ""
+      
+      );
+      log(payload.toString());
+      return GetTcsLocationModel.fromJson(payload.data);
+    } catch (err) {
+      throw Exception(err);
+    }
   }
 
 }

@@ -30,21 +30,21 @@ class UserBloc extends Object with Validators implements BaseBloc {
 
   StreamSink<bool> get loadingSink => _loading.sink;
 
-  login({LoginRequest loginRequest})async{
-    loadingSink.add(true);
+  // login({LoginRequest loginRequest})async{
+  //   loadingSink.add(true);
 
-    State state =
-    await ObjectFactory().repository.login(loginRequest:LoginRequest(username: loginRequest.username,password: loginRequest.password));
+  //   State state =
+  //   await ObjectFactory().repository.login(loginRequest:LoginRequest(username: loginRequest.username,password: loginRequest.password));
 
-    if (state is SuccessState) {
-      loadingSink.add(false);
-      _login.sink.add(state.value);
+  //   if (state is SuccessState) {
+  //     loadingSink.add(false);
+  //     _login.sink.add(state.value);
 
-    } else if (state is ErrorState) {
-      loadingSink.add(false);
-      _login.sink.addError(Constants.SOME_ERROR_OCCURRED);
-    }
-  }
+  //   } else if (state is ErrorState) {
+  //     loadingSink.add(false);
+  //     _login.sink.addError(Constants.SOME_ERROR_OCCURRED);
+  //   }
+  // }
 
   ///disposing the stream if it is not using
   @override

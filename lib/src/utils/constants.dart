@@ -14,6 +14,7 @@ class Constants {
     // new Color.fromRGBO(3, 169, 244, 1.0),
     // new Color.fromRGBO(0, 122, 193, 1.0),
     Colors.white,//0
+    Colors.grey,
     Color(0xFFA38E5D),
     Color(0xFF1977F3),
     Color(0xFFD24A37),
@@ -518,3 +519,11 @@ conditions for Online Payment Payments, without any prior notice.</p>
 
 
 }
+
+class ColorConstants {
+  static const Color white = Colors.white;
+  static const Color grey = Colors.grey;
+    
+
+}
+

@@ -1,5 +1,9 @@
+import 'package:app_template/src/screens/home_page.dart';
 import 'package:app_template/src/screens/login_page.dart';
+import 'package:app_template/src/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -11,6 +15,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -27,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
